@@ -1,4 +1,5 @@
 @import "./styles/fonts.css";
+@import "./styles/background_grid.scss";
 
 :root {
   /* General */
@@ -14,6 +15,28 @@
   --pulse-color: #DE75BD;
   --color-black-primary: #221B35;
   --color-white-primary: #FFFFFF;
+
+  /* Paddings */
+  --space-base-unit: 4px;
+  --space-4: calc(var(--space-base-unit) * 1);
+  --space-8: calc(var(--space-base-unit) * 2);
+  --space-12: calc(var(--space-base-unit) * 3);
+  --space-16: calc(var(--space-base-unit) * 4);
+  --space-20: calc(var(--space-base-unit) * 5);
+  --space-24: calc(var(--space-base-unit) * 6);
+  --space-32: calc(var(--space-base-unit) * 8);
+  --space-40: calc(var(--space-base-unit) * 10);
+  --space-44: calc(var(--space-base-unit) * 11);
+  --space-48: calc(var(--space-base-unit) * 12);
+  --space-56: calc(var(--space-base-unit) * 14);
+  --space-64: calc(var(--space-base-unit) * 16);
+
+  /* Grid variables */
+  --grid-gutter-width: 20px;
+  --grid-column-count: 8;
+  --grid-column-width-base: 90;
+  --grid-column-width: calc((var(--window-width) - calc(var(--grid-gutter-width) * 2)) / var(--grid-column-count));
+  --line-color: rgba(var(--foreground-rgb),0.15);
 
   /* Font Family */
   --font-regular: "shoneregular",system-ui,sans-serif;
@@ -51,28 +74,6 @@
   --font-size-marquee-desktopXXL-scalable: calc(var(--font-size-marquee-base) / var(--max-width-base) * var(--window-width));
   --font-size-marquee-scalable: var(--font-size-marquee-mobile-scalable);
   --letter-spacing-body: -0.01em;
-
-  --space-base-unit: 4px;
-
-  /* Paddings */
-  --space-4: calc(var(--space-base-unit) * 1);
-  --space-8: calc(var(--space-base-unit) * 2);
-  --space-12: calc(var(--space-base-unit) * 3);
-  --space-16: calc(var(--space-base-unit) * 4);
-  --space-20: calc(var(--space-base-unit) * 5);
-  --space-24: calc(var(--space-base-unit) * 6);
-  --space-32: calc(var(--space-base-unit) * 8);
-  --space-40: calc(var(--space-base-unit) * 10);
-  --space-44: calc(var(--space-base-unit) * 11);
-  --space-48: calc(var(--space-base-unit) * 12);
-  --space-56: calc(var(--space-base-unit) * 14);
-  --space-64: calc(var(--space-base-unit) * 16);
-
-  /* Grid variables */
-  --grid-gutter-width: 20px;
-  --grid-column-count: 8;
-  --grid-column-width-base: 90;
-  --grid-column-width: calc((var(--window-width) - calc(var(--grid-gutter-width) * 2)) / var(--grid-column-count));
 
   /* Animations */
   --ease-out: cubic-bezier(0.33,1,0.68,1);
@@ -118,6 +119,34 @@
     --font-size-marquee-scalable: calc(var(--font-size-marquee-base) * 1px);
     --grid-column-count: 16;
     --grid-column-width: calc(var(--grid-column-width-base) * 1px);
+  }
+
+  @media only screen and (min-width: 1620px) {
+    --grid-column-count: 18;
+  }
+
+  @media only screen and (min-width: 1760px) {
+    --grid-column-count: 20;
+  }
+
+  @media only screen and (min-width: 1900px) {
+    --grid-column-count: 22;
+  }
+
+  @media only screen and (min-width: 2040px) {
+    --grid-column-count: 24;
+  }
+
+  @media only screen and (min-width: 2180px) {
+    --grid-column-count: 26;
+  }
+
+  @media only screen and (min-width: 2340px) {
+    --grid-column-count: 28;
+  }
+
+  @media only screen and (min-width: 2480px) {
+    --grid-column-count: 30;
   }
 }
 

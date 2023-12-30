@@ -1,11 +1,11 @@
 import './App.scss'
-import { Grid } from './components/Grid/Grid'
+import { BackgroundGrid } from './components/BackgroundGrid/BackgroundGrid'
 
 function App() {
 
   return (
     <>
-      <Grid />
+      <BackgroundGrid />
     </>
   )
 }
