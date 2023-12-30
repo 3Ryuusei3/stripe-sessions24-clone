@@ -1,5 +1,6 @@
 @import "./styles/fonts.css";
 @import "./styles/background_grid.scss";
+@import "./styles/header.scss";
 
 :root {
   /* General */
@@ -39,9 +40,8 @@
   --line-color: rgba(var(--foreground-rgb),0.15);
 
   /* Font Family */
-  --font-regular: "shoneregular",system-ui,sans-serif;
-  --font-mono-semibold: "SohneMono-Kraftig",ui-monospace,monospace;
-  --font-mono-light: "SohneMono-Buch",ui-monospace,monospace;
+  --font-regular: "shoneregular", system-ui, sans-serif;
+  --font-mono: "shone_monoregular" ,ui-monospace, monospace;
 
   /* Font weights */
   --font-weight-normal: 300;

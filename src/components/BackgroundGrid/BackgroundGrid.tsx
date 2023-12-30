@@ -6,12 +6,12 @@ export function BackgroundGrid() {
     <div className="background-grid">
       <div className="background-grid__vertical">
         {verticalLines.map((_, index) => (
-          <div key={index} className="background-grid__vertical--line"></div>
+          <div key={`verticalLine-${index}`} className="background-grid__vertical--line"></div>
         ))}
       </div>
       <div className="background-grid__horizontal">
         {horizontallLines.map((_, index) => (
-          <div key={index} className="background-grid__horizontal--line"></div>
+          <div key={`horizontalLine-${index}`} className="background-grid__horizontal--line"></div>
         ))}
       </div>
     </div>
