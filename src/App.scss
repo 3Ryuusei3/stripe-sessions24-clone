@@ -1,12 +1,13 @@
 @import "./styles/fonts.css";
 @import "./styles/background_grid.scss";
 @import "./styles/header.scss";
+@import "./styles/main.scss";
 
 :root {
   /* General */
   --max-width-base: 1480;
   --max-width: calc(var(--max-width-base) * 1px);
-  --scrollbar-width: 15px;
+  --scrollbar-width: 0px;
   --window-width: calc(100vw - var(--scrollbar-width));
   --border-radius: 12px;
 
@@ -17,8 +18,16 @@
   --color-black-primary: #221B35;
   --color-white-primary: #FFFFFF;
 
+  /* Buttons */
+  --button-height: var(--grid-column-width);
+  --button-background: hsla(0,0%,100%,.15);
+  --button-color: var(--color-black-primary);
+  --button-border: 1px solid var(--button-color);
+  --button-font: normal var(--font-size-subtitle-scalable) /1.02 var(--font-regular);
+
   /* Paddings */
   --space-base-unit: 4px;
+  --space-2: calc(var(--space-base-unit) * 0.5);
   --space-4: calc(var(--space-base-unit) * 1);
   --space-8: calc(var(--space-base-unit) * 2);
   --space-12: calc(var(--space-base-unit) * 3);
@@ -40,8 +49,9 @@
   --line-color: rgba(var(--foreground-rgb),0.15);
 
   /* Font Family */
-  --font-regular: "shoneregular", system-ui, sans-serif;
-  --font-mono: "shone_monoregular" ,ui-monospace, monospace;
+  --font-regular: "sohneregular", system-ui, sans-serif;
+  --font-mono: "sohne_monoregular" ,ui-monospace, monospace;
+  --font-mono-semibold: "sohne_monokrftig", ui-monospace, monospace;
 
   /* Font weights */
   --font-weight-normal: 300;
@@ -52,6 +62,7 @@
   --font-body: var(--font-weight-normal) 14px/1.2 var(--font-regular);
   --font-badge: var(--font-weight-normal) 10px/1.1 var(--font-regular);
   --font-caption: 11px/1 var(--font-mono-semibold);
+
   --font-size-title-base: 80;
   --font-size-title-mobile-scalable: calc(var(--font-size-title-base) / 760 * var(--window-width));
   --font-size-title-tablet-scalable: calc(var(--font-size-title-base) / 940 * var(--window-width));
@@ -59,6 +70,7 @@
   --font-size-title-desktopXL-scalable: calc(var(--font-size-title-base) / 1300 * var(--window-width));
   --font-size-title-desktopXXL-scalable: calc(var(--font-size-title-base) / var(--max-width-base) * var(--window-width));
   --font-size-title-scalable: var(--font-size-title-mobile-scalable);
+
   --font-size-subtitle-base: 48;
   --font-size-subtitle-mobile-scalable: calc(var(--font-size-subtitle-base) / 760 * var(--window-width));
   --font-size-subtitle-tablet-scalable: calc(var(--font-size-subtitle-base) / 940 * var(--window-width));
@@ -66,6 +78,7 @@
   --font-size-subtitle-desktopXL-scalable: calc(var(--font-size-subtitle-base) / 1300 * var(--window-width));
   --font-size-subtitle-desktopXXL-scalable: calc(var(--font-size-subtitle-base) / var(--max-width-base) * var(--window-width));
   --font-size-subtitle-scalable: var(--font-size-subtitle-mobile-scalable);
+
   --font-size-marquee-base: 122;
   --font-size-marquee-mobile-scalable: calc(var(--font-size-marquee-base) / 760 * var(--window-width));
   --font-size-marquee-tablet-scalable: calc(var(--font-size-marquee-base) / 940 * var(--window-width));
@@ -175,8 +188,17 @@ html {
   scroll-behavior: smooth;
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
 body,html {
   max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1;
 }
 
 a,button {
