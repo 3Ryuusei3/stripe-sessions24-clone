@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import OverviewData from './../../data/OverviewData.json';
 import { getColumnCount } from './../../utils/getColumnCount.js';
 import WorldIcon from '../../components/Icons/WorldIcon';
 import BubbleIcon from '../../components/Icons/BubbleIcon';
@@ -14,7 +13,7 @@ interface Item {
 }
 
 export function OverviewCarousel() {
-  const originalData = OverviewData;
+  const [originalData, setOriginalData] = useState<Item[]>([]);
   const [data, setData] = useState<Item[]>([]);
   const [columnCount, setColumnCount] = useState(getColumnCount());
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
@@ -23,9 +22,14 @@ export function OverviewCarousel() {
   const [disableHover, setDisableHover] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
-  useEffect(() => {
-    setData(OverviewData);
-  }, []);
+useEffect(() => {
+  fetch('/overviewData.json')
+    .then(response => response.json())
+    .then(data => {
+      setData(data);
+      setOriginalData(data);
+    });
+}, [originalData, data]);
 
   // Update column count and column width on resize
   useEffect(() => {
