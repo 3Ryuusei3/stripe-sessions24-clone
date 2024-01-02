@@ -64,14 +64,12 @@
 }
 
 .carousel__container {
-  --column-width: var(--grid-column-width);
-
   position: relative;
-  max-width: var(--max-width);
   margin: calc(2 * var(--grid-column-width)) auto 0;
   display: grid;
   justify-items: center;
   width: 100%;
+  overflow: hidden;
   height: calc(7 * var(--grid-column-width));
 
   .carousel__card {

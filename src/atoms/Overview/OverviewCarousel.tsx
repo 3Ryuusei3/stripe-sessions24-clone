@@ -14,16 +14,19 @@ interface Item {
 }
 
 export function OverviewCarousel() {
+  const originalData = OverviewData;
   const [data, setData] = useState<Item[]>([]);
   const [columnCount, setColumnCount] = useState(getColumnCount());
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [columnWidth, setColumnWidth] = useState((viewportWidth - (20 * 2)) / columnCount);
-
+  const [isHovering, setIsHovering] = useState(false);
+  const [disableHover, setDisableHover] = useState(false);
 
   useEffect(() => {
     setData(OverviewData);
   }, []);
 
+  // Update column count and column width on resize
   useEffect(() => {
     const handleResize = () => {
       setColumnCount(getColumnCount());
@@ -37,29 +40,60 @@ export function OverviewCarousel() {
     };
   }, []);
 
+  // Create carousel effect and inject and remove cards from the data array
   useEffect(() => {
-    const interval = setInterval(() => {
-      setData(prevData => {
-        const firstItem = prevData[0];
-        const remainingItems = prevData.slice(1);
-        const nextActiveIndex = (prevData.findIndex(item => item.active) + 1) % prevData.length;
+    let interval: ReturnType<typeof setInterval>;
 
-        // Mueve el primer elemento al final
-        const newData = [...remainingItems, firstItem];
-
-        // Marca la siguiente tarjeta como activa
-        return newData.map((item, index) => ({
-          ...item,
-          active: index === nextActiveIndex
-        }));
-      });
-    }, 3000);
+    if (!isHovering) {
+      interval = setInterval(() => {
+        setData(prevData => {
+          const activeIndex = prevData.findIndex(item => item.active);
+          const remainingCards = prevData.length - activeIndex;
+          let newData = [...prevData];
+          if (remainingCards <= 6) {
+            newData = [...newData, ...originalData];
+            newData.splice(0, 4);
+          }
+          const nextActiveIndex = (activeIndex + 1) % newData.length;
+          return newData.map((item, index) => ({
+            ...item,
+            active: index === nextActiveIndex
+          }));
+        });
+      }, 4000);
+    }
 
     return () => {
-      clearInterval(interval);
+      if (interval) {
+        clearInterval(interval);
+      }
     };
-  }, []);
+  }, [originalData, isHovering]);
 
+  // Handle card click
+  const handleCardClick = (clickedIndex: number) => {
+    setData(prevData => {
+      let newData = [...prevData];
+      let newActiveIndex = clickedIndex;
+      if (newData.length - clickedIndex < 6) {
+        newData = [...newData, ...originalData.slice(0, 4)];
+      } else if (clickedIndex < 6) {
+        const itemsToAdd = originalData.slice(0, 4);
+        newData = [...itemsToAdd, ...newData];
+        newActiveIndex += 4; // Actualiza el índice activo
+      }
+
+      return newData.map((item, index) => ({
+        ...item,
+        active: index === newActiveIndex
+      }));
+    });
+
+    setDisableHover(true);
+    setTimeout(() => setDisableHover(false), 800);
+  };
+
+  // Calculate the position and the z-index of each card
   function calculateXPosition(index: number, activeIndex: number) {
     const distanceFromActive = index - activeIndex;
     const position = distanceFromActive * columnWidth * 3.5;
@@ -84,6 +118,7 @@ export function OverviewCarousel() {
     return 50 - distanceFromActive;
   }
 
+  // Get stroke color for icons
   function getStrokeColor(isActive: boolean): string {
     return isActive ? '#FFFFFF' : '#221B35';
   }
@@ -97,10 +132,14 @@ export function OverviewCarousel() {
           className={`carousel__card ${item.active ? 'active' : ''}`}
           key={index}
           style={{
-            '--card-translate-x': calculateXPosition(index, activeIndex),
-            '--card-translate-y': calculateYPosition(index, activeIndex, columnWidth),
-            '--card-z-index': calculateZIndex(index, activeIndex)
-          } as React.CSSProperties}
+            ['--card-translate-x' as string]: calculateXPosition(index, activeIndex),
+            ['--card-translate-y' as string]: calculateYPosition(index, activeIndex, columnWidth),
+            ['--card-z-index' as string]: calculateZIndex(index, activeIndex),
+            pointerEvents: disableHover ? 'none' : 'auto'
+          }}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          onClick={() => handleCardClick(index)}
         >
           <div className="carousel__card--top">
             <h3>{item.title}</h3>
