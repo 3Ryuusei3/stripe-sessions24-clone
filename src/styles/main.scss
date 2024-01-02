@@ -1,0 +1,98 @@
+@import './hero.scss';
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-block: calc(0.5 * var(--grid-column-width)) calc(2.5 * var(--grid-column-width));
+  z-index: 2;
+
+  > div {
+    z-index: 2;
+  }
+
+  /* Font sizes */
+  --font-size-hero-base-mobile: 142;
+  --font-size-hero-base-tablet: 150;
+  --font-size-hero-base-desktop: 180;
+  --font-size-hero-base: 216;
+  --font-size-hero-mobile-scalable: calc(var(--font-size-hero-base-mobile) / 760 * var(--window-width));
+  --font-size-hero-tablet-scalable: calc(var(--font-size-hero-base-tablet) / 940 * var(--window-width));
+  --font-size-hero-desktop-scalable: calc(var(--font-size-hero-base-desktop) / 1120 * var(--window-width));
+  --font-size-hero-desktopXL-scalable: calc(var(--font-size-hero-base) / 1300 * var(--window-width));
+  --font-size-hero-desktopXXL-scalable: calc(var(--font-size-hero-base) / var(--max-width-base) * var(--window-width));
+
+  --font-size-hero-scalable: var(--font-size-hero-mobile-scalable);
+
+  @media only screen and (min-width: 760px) {
+    --font-size-hero-scalable:var(--font-size-hero-tablet-scalable)
+  }
+
+  @media only screen and (min-width: 940px) {
+    --font-size-hero-scalable:var(--font-size-hero-desktop-scalable)
+  }
+
+  @media only screen and (min-width: 1120px) {
+    --font-size-hero-scalable:var(--font-size-hero-desktopXL-scalable)
+  }
+
+  @media only screen and (min-width: 1300px) {
+    --font-size-hero-scalable:var(--font-size-hero-desktopXXL-scalable)
+  }
+
+  @media only screen and (min-width: 1480px) {
+    --font-size-hero-scalable:calc(var(--font-size-hero-base) * 1px)
+  }
+
+  h1 {
+    font-size: var(--font-size-hero-scalable);
+    letter-spacing: -0.06em;
+  }
+
+  h2 {
+    font-size: var(--font-size-title-scalable);
+    letter-spacing: -.05em;
+  }
+
+  span {
+    font: var(--font-caption);
+    font-family: var(--font-mono-semibold);
+    text-transform: uppercase;
+  }
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: calc(var(--grid-column-count) * var(--grid-column-width));
+  position: relative;
+  overflow: hidden;
+
+  div {
+    background-color: var(--color-black-primary);
+    height: var(--grid-column-width);
+    display: flex;
+    align-items: center;
+
+    h2 {
+      color: var(--color-white-primary);
+    }
+  }
+}
+
+.section-subtitle {
+  position: absolute;
+  width: fit-content;
+  transform: translateY(-100%);
+
+  span {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black-primary);
+    color: var(--color-white-primary);
+    letter-spacing: -.01em;
+    padding: var(--space-2) var(--space-4) var(--space-4);
+  }
+}
