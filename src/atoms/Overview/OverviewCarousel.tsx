@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import OverviewData from './../../data/OverviewData.json';
 import { getColumnCount } from './../../utils/getColumnCount.js';
 import WorldIcon from '../../components/Icons/WorldIcon';
@@ -21,6 +21,7 @@ export function OverviewCarousel() {
   const [columnWidth, setColumnWidth] = useState((viewportWidth - (20 * 2)) / columnCount);
   const [isHovering, setIsHovering] = useState(false);
   const [disableHover, setDisableHover] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     setData(OverviewData);
@@ -40,11 +41,31 @@ export function OverviewCarousel() {
     };
   }, []);
 
+  // Check if the carousel is in view
+  const carouselRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      setIsInView(entries[0].isIntersecting);
+    });
+
+    const currentCarouselRef = carouselRef.current;
+
+    if (currentCarouselRef) {
+      observer.observe(currentCarouselRef);
+    }
+
+    return () => {
+      if (currentCarouselRef) {
+        observer.unobserve(currentCarouselRef);
+      }
+    };
+  }, []);
+
   // Create carousel effect and inject and remove cards from the data array
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
 
-    if (!isHovering) {
+    if (isInView && !isHovering) {
       interval = setInterval(() => {
         setData(prevData => {
           const activeIndex = prevData.findIndex(item => item.active);
@@ -68,7 +89,7 @@ export function OverviewCarousel() {
         clearInterval(interval);
       }
     };
-  }, [originalData, isHovering]);
+  }, [originalData, isHovering, isInView]);
 
   // Handle card click
   const handleCardClick = (clickedIndex: number) => {
@@ -123,10 +144,11 @@ export function OverviewCarousel() {
     return isActive ? '#FFFFFF' : '#221B35';
   }
 
+  // Get active index
   const activeIndex = data.findIndex(item => item.active);
 
   return (
-    <div className="carousel__container">
+    <div className="carousel__container" ref={carouselRef}>
       {data.map((item, index) => (
         <div
           className={`carousel__card ${item.active ? 'active' : ''}`}

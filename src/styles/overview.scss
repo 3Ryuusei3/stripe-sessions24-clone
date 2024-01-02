@@ -73,7 +73,7 @@
   height: calc(7 * var(--grid-column-width));
 
   .carousel__card {
-    --card-border-width: 5px;
+    --card-border-width: 6px;
 
     display: flex;
     flex-direction: column;
@@ -110,7 +110,6 @@
       h3 {
         font: var(--font-weight-normal) var(--font-size-subtitle-scalable) /1.02 var(--font-regular);
         letter-spacing: -0.03em;
-        margin-block: var(--space-32);
       }
 
       svg {
@@ -120,7 +119,6 @@
     }
 
     &--bottom {
-      margin-bottom: var(--space-16);
 
       p {
         font: var(--font-body);

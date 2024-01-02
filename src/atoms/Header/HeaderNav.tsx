@@ -5,12 +5,12 @@ import ArrowIcon from "../../components/Icons/ArrowIcon";
 export function HeaderNav() {
 
   return (
-    <header className="header-nav">
-      <div className="header-nav__container">
-        <div className="header-nav__container--logo">
+    <header className="header header-nav">
+      <div className="header__container">
+        <div className="header__container--logo">
           <StripeIcon fill='var(--color-black-primary)' />
         </div>
-        <ul className="header-nav__container--nav">
+        <ul className="header__container--nav">
           <li><Link to="#">Overview</Link></li>
           <li><Link to="#">Talks</Link></li>
           <li><Link to="#">Speakers</Link></li>
@@ -18,7 +18,7 @@ export function HeaderNav() {
           <li><Link to="#">Sponsors</Link></li>
           <li><Link to="#">FAQ</Link></li>
         </ul>
-        <div className="header-nav__container--register">
+        <div className="header__container--register">
           <Link className="register__btn" to="#">
             <div className="register__btn--text">
               <span>Register</span>
