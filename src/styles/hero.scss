@@ -59,11 +59,26 @@
   margin-top: var(--grid-column-width);
   padding-inline: var(--grid-gutter-width);
 
+  @media screen and (max-width: 900px) {
+    grid-template-rows: repeat(5, var(--grid-column-width));
+  }
+
   &--title {
     position: relative;
     grid-column: 1/8;
     @media screen and (min-width: 1120px) {
       grid-column: 2/8;
+    }
+
+    .section-title div {
+      &:first-child {
+        width: calc(6 * var(--grid-column-width));
+      }
+
+      &:last-child {
+        margin-left: var(--grid-column-width);
+        width: calc(4 * var(--grid-column-width));
+      }
     }
   }
 
@@ -71,10 +86,6 @@
     grid-row: 4;
     grid-column: calc(var(--grid-column-count) - 6) / span 7;
     display: flex;
-
-    @media screen and (max-width: 900px) {
-      margin-top: var(--grid-column-width);
-    }
 
     .register__btn--text {
       background: var(--button-background);
@@ -126,9 +137,5 @@
     position: absolute;
     bottom: 0;
     left: var(--grid-gutter-width);
-
-    @media screen and (max-width: 900px) {
-      bottom: var(--grid-column-width);
-    }
   }
 }

@@ -2,6 +2,7 @@
 @import "./styles/background_grid.scss";
 @import "./styles/header.scss";
 @import "./styles/main.scss";
+@import "./styles/overview.scss";
 
 :root {
   /* General */
@@ -234,4 +235,25 @@ textarea {
 ::selection {
   color: var(--pulse-color,lightpink);
   background: var(--color-black-primary)
+}
+
+.wave__container {
+  position: fixed;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 0;
+  width: 100vw;
+
+  @media screen and (max-width: 500px) {
+    width: 250vw;
+    left: -20%;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    filter: blur(var(--img-blur));
+    position: relative;
+    z-index: -1;
+  }
 }

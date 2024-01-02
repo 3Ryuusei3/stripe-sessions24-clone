@@ -1,12 +1,12 @@
 import { Hero } from "../../components/Hero/Hero";
-import { Wave } from "../../components/Wave/Wave";
+import { Overview } from "../../components/Overview/Overview";
 
 export function Index() {
 
   return (
     <main>
       <Hero />
-      <Wave />
+      <Overview />
     </main>
   )
 }
