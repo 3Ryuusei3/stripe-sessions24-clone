@@ -6,6 +6,7 @@
   height: calc(100% + var(--grid-column-width));
   overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 
   &__vertical {
     display: grid;
