@@ -91,6 +91,7 @@
                 0 0 0 4px var(--color-black-primary);
 
     z-index: var(--card-z-index);
+    cursor: pointer;
     transform: translate(var(--card-translate-x), var(--card-translate-y));
     transition: all 0.8s ease;
 

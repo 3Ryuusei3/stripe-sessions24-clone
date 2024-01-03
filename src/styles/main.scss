@@ -68,7 +68,6 @@ main {
   align-items: flex-start;
   max-width: calc(var(--grid-column-count) * var(--grid-column-width));
   position: relative;
-  overflow: hidden;
 
   div {
     background-color: var(--color-black-primary);

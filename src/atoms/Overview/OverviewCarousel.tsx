@@ -22,14 +22,14 @@ export function OverviewCarousel() {
   const [disableHover, setDisableHover] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
-useEffect(() => {
-  fetch('/overviewData.json')
-    .then(response => response.json())
-    .then(data => {
-      setData(data);
-      setOriginalData(data);
-    });
-}, [originalData, data]);
+  useEffect(() => {
+    fetch('/overviewData.json')
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+        setOriginalData(data);
+      });
+  }, []);
 
   // Update column count and column width on resize
   useEffect(() => {
