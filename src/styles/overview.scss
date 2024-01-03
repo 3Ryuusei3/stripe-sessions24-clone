@@ -127,3 +127,48 @@
     }
   }
 }
+
+.marquee__container {
+  margin-top: calc(1 * var(--grid-column-width));
+  height: calc(2 * var(--grid-column-width));
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-black-primary);
+
+  .marquee__card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black-primary);
+    gap: var(--space-48);
+    padding-right: var(--space-48);
+    @media screen and (max-width: 900px) {
+      gap: var(--space-24);
+      padding-right: var(--space-24);
+
+    }
+    color: var(--color-white-primary);
+
+    &--number {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-weight: var(--font-weight-normal);
+        font-size: var(--font-size-marquee-scalable);
+        font-family: var(--font-mono);
+        line-height: 1;
+        font-feature-settings: "tnum";
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -.025em;
+      }
+    }
+
+    &--img svg {
+      max-width: var(--font-size-marquee-scalable);
+    }
+  }
+}
