@@ -2,7 +2,6 @@
 @import "./styles/background_grid.scss";
 @import "./styles/header.scss";
 @import "./styles/main.scss";
-@import "./styles/overview.scss";
 
 :root {
   /* General */
@@ -253,6 +252,7 @@ textarea {
     width: 100%;
     object-fit: cover;
     filter: blur(var(--img-blur));
+    opacity: var(--img-opacity);
     position: relative;
     z-index: -1;
   }
