@@ -82,6 +82,7 @@
   &.header-fixed {
     position: fixed;
     max-width: calc(10 * var(--grid-column-width));
+    top: calc(var(--grid-column-width) / 4);
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
