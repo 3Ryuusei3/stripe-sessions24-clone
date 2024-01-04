@@ -71,7 +71,7 @@
   &--title {
     position: relative;
     grid-column: 1/8;
-    @media screen and (min-width: 1120px) {
+    @media screen and (max-width: 1120px) {
       grid-column: 2/8;
     }
 

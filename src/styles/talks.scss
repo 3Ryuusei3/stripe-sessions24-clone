@@ -13,7 +13,8 @@
 
 .talks__title {
   width: 100%;
-  position: relative;
+  position: sticky;
+  top: calc(var(--grid-column-width) + var(--grid-gutter-width));
   min-width: calc(var(--grid-column-count) / 2);
   height: calc(8 * var(--grid-column-width));
   border: 1px solid var(--color-black-primary);
@@ -22,6 +23,7 @@
 
   @media screen and (max-width: 940px) {
     height: calc(10 * var(--grid-column-width));
+    padding: calc(var(--grid-column-width)) 3px calc(2 * var(--grid-column-width));
   }
 
   &::before {
@@ -48,6 +50,7 @@
   min-width: calc(var(--grid-column-count) / 2);
 
   .talks__card {
+    position: sticky;
     height: calc(var(--grid-column-width) * 5);
     @media screen and (max-width: 600px) {
       height: calc(8 * var(--grid-column-width));
@@ -59,6 +62,20 @@
     background-color: var(--color-white-primary);
     border: 1px solid var(--color-black-primary);
     border-radius: var(--space-8);
+
+    @for $i from 0 through 8 {
+      &:nth-child(#{$i + 1}) {
+        top: calc(#{20px * $i} + var(--grid-column-width) + var(--grid-gutter-width));
+      }
+    }
+
+    @media screen and (max-width: 940px) {
+      @for $i from 0 through 8 {
+        &:nth-child(#{$i + 1}) {
+          top: calc(#{20px * $i} + var(--grid-column-width) * 5 + var(--grid-gutter-width));
+        }
+      }
+    }
 
     h3 {
       font: var(--font-weight-normal) var(--font-size-subtitle-scalable) /1.02 var(--font-regular);
