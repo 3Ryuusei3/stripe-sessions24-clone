@@ -21,6 +21,9 @@ export function ScheduleDates() {
     <div className="dates__container">
       {data.map((item, index) => (
         <div className="dates__card" key={index}>
+          <div className="dates__card--count">
+            <p>Day 0{index + 1}</p>
+          </div>
           <div className="dates__card--date">
             <h2 className="dates__card--month">{item.month}</h2>
             <h2 className="dates__card--day">{item.day}</h2>
