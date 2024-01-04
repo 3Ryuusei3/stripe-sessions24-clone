@@ -95,6 +95,10 @@
       backdrop-filter: blur(12px);
     }
 
+    @media screen and (max-width: 760px) {
+      width: calc(var(--grid-column-count) * var(--grid-column-width));
+    }
+
     .header__container {
       height: unset !important;
       padding: var(--space-8);

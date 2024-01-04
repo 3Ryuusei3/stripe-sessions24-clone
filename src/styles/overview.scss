@@ -15,6 +15,10 @@
     column-gap: 0;
   }
 
+  @media screen and (max-width: 600px) {
+    grid-template-rows: repeat(7, var(--grid-column-width));
+  }
+
   &--title {
     position: relative;
     grid-row: 1 / span 4;
@@ -49,12 +53,17 @@
     max-width: calc(5 * var(--grid-column-width));
     align-self: end;
     margin-bottom: var(--grid-column-width);
+    font: var(--font-body);
 
     @media screen and (max-width: 900px) {
       max-width: calc(6 * var(--grid-column-width));
       grid-row: 5 / span 2;
       justify-self: end;
       margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-row: 6 / span 2;
     }
 
     p {
@@ -71,6 +80,10 @@
   width: 100%;
   overflow: hidden;
   height: calc(7 * var(--grid-column-width));
+
+  @media screen and (max-width: 600px) {
+    height: calc(8 * var(--grid-column-width));
+  }
 
   .carousel__card {
     --card-border-width: 6px;
@@ -95,6 +108,11 @@
     transform: translate(var(--card-translate-x), var(--card-translate-y));
     transition: all 0.8s ease;
 
+    @media screen and (max-width: 600px) {
+      height: calc(6 * var(--grid-column-width));
+      width: calc(5 * var(--grid-column-width));
+    }
+
     &.active {
       background-color: var(--color-black-primary);
       color: var(--color-white-primary);
@@ -106,7 +124,12 @@
 
     &--top {
       display: flex;
+      width: 100%;
       gap: var(--space-16);
+
+      @media screen and (max-width: 600px) {
+        gap: var(--space-4);
+      }
 
       h3 {
         font: var(--font-weight-normal) var(--font-size-subtitle-scalable) /1.02 var(--font-regular);
@@ -116,6 +139,11 @@
       svg {
         min-width: 88px;
         height: 88px;
+
+        @media screen and (max-width: 600px) {
+          min-width: 40px;
+          height: 40px;
+        }
       }
     }
 
