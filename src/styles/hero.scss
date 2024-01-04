@@ -68,10 +68,14 @@
     grid-template-rows: repeat(5, var(--grid-column-width));
   }
 
+  @media screen and (max-width: 760px) {
+    grid-template-rows: repeat(6, var(--grid-column-width));
+  }
+
   &--title {
     position: relative;
     grid-column: 1/8;
-    @media screen and (max-width: 1120px) {
+    @media screen and (min-width: 1120px) and (max-width: 1300px) {
       grid-column: 2/8;
     }
 
@@ -90,6 +94,9 @@
   &--register {
     grid-row: 4;
     grid-column: calc(var(--grid-column-count) - 6) / span 7;
+    @media screen and (max-width: 900px) {
+      grid-column: calc(var(--grid-column-count) - 5) / span 6;
+    }
     display: flex;
 
     .register__btn--text {

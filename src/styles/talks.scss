@@ -52,7 +52,7 @@
   .talks__card {
     position: sticky;
     height: calc(var(--grid-column-width) * 5);
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 500px) {
       height: calc(8 * var(--grid-column-width));
     }
     display: flex;
