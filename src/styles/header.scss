@@ -1,6 +1,6 @@
 .header {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   width: 100%;
   top: calc(var(--grid-column-width) / 2);
 
@@ -45,6 +45,7 @@
       .register__btn {
         display: flex;
         color: var(--color-white-primary);
+        cursor: pointer;
 
         & > div {
           background-color: var(--color-black-primary);
