@@ -38,8 +38,12 @@
 }
 
   .section-title {
+    & div:nth-child(1) {
+      min-width: calc(3 * var(--grid-column-width) - 4px);
+    }
+
     & div:nth-child(2) {
-      margin-left: var(--grid-column-width);
+      margin-left: calc(var(--grid-column-width) - 4px);
       min-width: calc(5 * var(--grid-column-width));
     }
   }
