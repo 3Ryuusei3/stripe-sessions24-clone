@@ -6,9 +6,6 @@
   padding-inline: var(--grid-gutter-width);
   display: grid;
   grid-template-rows: repeat(2, var(--grid-column-width));
-  @media screen and (max-width: 760px) {
-    grid-template-rows: repeat(5, var(--grid-column-width));
-  }
   column-gap: var(--grid-column-width);
   width: 100%;
 
@@ -89,6 +86,11 @@
         transform: scaleX(-1);
       }
       z-index: 0;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
     }
 
     &--tags {
