@@ -40,10 +40,6 @@
         margin-left: var(--grid-column-width);
         width: calc(3 * var(--grid-column-width));
       }
-
-      &:nth-child(3) {
-        width: calc(1 * var(--grid-column-width));
-      }
     }
   }
 
