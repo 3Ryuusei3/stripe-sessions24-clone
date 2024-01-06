@@ -56,6 +56,9 @@
     --ticket-height: 14;
   }
   grid-template-columns: repeat(calc(var(--grid-column-count)), var(--grid-column-width));
+  @media only screen and (min-width: 1620px) {
+    grid-template-columns: repeat(16, var(--grid-column-width));
+  }
 
   .main-ticket__left {
     position: relative;
@@ -70,6 +73,9 @@
       grid-column: 2 / span calc(var(--grid-column-count) - 2);
       grid-row: 1 / span 7;
       padding: var(--space-16);
+    }
+    @media only screen and (min-width: 1620px) {
+      grid-column: 1 / span 9;
     }
     display: flex;
     flex-direction: column;
@@ -150,6 +156,9 @@
       grid-column: 2 / span calc(var(--grid-column-count) - 2);
       grid-row: 8 / span 7;
       padding: var(--space-16);
+    }
+    @media only screen and (min-width: 1620px) {
+      grid-column: 10 / span 7;
     }
     outline: 1px solid var(--color-black-primary);
     border-radius: var(--space-8);
