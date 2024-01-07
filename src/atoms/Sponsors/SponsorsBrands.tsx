@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AccordIcon from "../../components/Icons/Brands/AccordIcon";
 import CheckIcon from "../../components/Icons/Brands/CheckIcon";
 import ClerkIcon from "../../components/Icons/Brands/ClerkIcon";
@@ -12,67 +13,66 @@ import SyftIcon from "../../components/Icons/Brands/SyftIcon";
 import VennIcon from "../../components/Icons/Brands/VennIcon";
 
 export function SponsorsBrands() {
-
   return (
     <div className="sponsors-brands__container">
       <div className="sponsors-brands__container--tag">
         <p>Platinum</p>
       </div>
       <div className="sponsors-brands__container--brands platinum">
-        <div className="single-brand__container">
+        <Link className="single-brand__container" to="https://clerk.com/">
           <ClerkIcon />
-        </div>
-        <div className="single-brand__container">
+        </Link>
+        <Link className="single-brand__container" to="https://www.klarna.com/">
           <KlarnaIcon />
-        </div>
+        </Link>
       </div>
       <div className="sponsors-brands__container--tag">
         <p>Gold</p>
       </div>
       <div className="sponsors-brands__container--brands gold">
-        <div className="single-brand__container">
+        <Link className="single-brand__container" to="https://www.checkhq.com/">
           <CheckIcon />
-        </div>
-        <div className="single-brand__container">
+        </Link>
+        <Link className="single-brand__container" to="https://stunning.co/">
           <StunningIcon />
-        </div>
+        </Link>
       </div>
       <div className="sponsors-brands__container--tag">
         <p>Silver</p>
       </div>
       <div className="sponsors-brands__container--brands silver">
-        <div className="single-brand__container">
+        <Link className="single-brand__container" to="https://myersholum.com/">
           <MyersHolumIcon />
-        </div>
-        <div className="single-brand__container">
+        </Link>
+        <Link className="single-brand__container" to="https://www.shopware.com/">
           <ShopwareIcon />
-        </div>
+        </Link>
       </div>
       <div className="sponsors-brands__container--tag">
         <p>Startup</p>
       </div>
       <div className="sponsors-brands__container--brands startup">
         <div className="three-brand__container">
-          <div className="single-brand__container">
+          <Link className="single-brand__container" to="https://inaccord.com/">
             <AccordIcon />
-          </div>
-          <div className="single-brand__container">
+          </Link>
+          <Link className="single-brand__container" to="https://paypack.ai/">
             <PaypackIcon />
-          </div>
-          <div className="single-brand__container">
+          </Link>
+          <Link className="single-brand__container" to="https://pilot.com/">
             <PilotIcon />
-          </div>
+          </Link>
         </div>
         <div className="three-brand__container">
-          <div className="single-brand__container">
+          <Link className="single-brand__container" to="https://pulley.com/">
             <PulleyIcon />
-          </div>
-          <div className="single-brand__container">
+          </Link>
+          <Link className="single-brand__container" to="https://syftanalytics.com/">
             <SyftIcon />
-          </div>
-          <div className="single-brand__container">
+          </Link>
+          <Link className="single-brand__container" to="https://venntechnology.com/">
             <VennIcon />
-          </div>
+          </Link>
         </div>
       </div>
     </div>
