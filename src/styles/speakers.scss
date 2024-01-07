@@ -17,7 +17,7 @@
     grid-row: 1 / span 4;
 
     @media screen and (max-width: 900px) {
-      grid-row: 1 / span 4;
+      grid-row: 1 / span 2;
     }
 
     .section-title div {
@@ -53,7 +53,8 @@
 
     @media screen and (max-width: 900px) {
       max-width: calc(6 * var(--grid-column-width));
-      grid-row: 5 / span 2;
+      height: calc(1 * var(--grid-column-width));
+      grid-row: 3 / span 2;
       margin-bottom: 0;
     }
 

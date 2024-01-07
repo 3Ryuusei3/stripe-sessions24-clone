@@ -1,6 +1,6 @@
 export function BackgroundGrid() {
   const verticalLines = new Array(30).fill(null);
-  const horizontallLines = new Array(200).fill(null);
+  const horizontallLines = new Array(400).fill(null);
 
   return (
     <div className="background-grid">

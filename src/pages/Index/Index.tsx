@@ -2,6 +2,7 @@ import { Hero } from "../../components/Hero/Hero";
 import { Overview } from "../../components/Overview/Overview";
 import { Schedule } from "../../components/Schedule/Schedule";
 import { Speakers } from "../../components/Speakers/Speakers";
+import { Sponsors } from "../../components/Sponsors/Sponsors";
 import { Talks } from "../../components/Talks/Talks";
 import { Tickets } from "../../components/Tickets/Tickets";
 
@@ -15,6 +16,7 @@ export function Index() {
       <Talks />
       <Speakers />
       <Tickets />
+      <Sponsors />
     </main>
   )
 }

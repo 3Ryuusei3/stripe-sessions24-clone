@@ -33,7 +33,7 @@ export function OverviewMarquee() {
   }, [targetDate]);
 
   return (
-    <Marquee className="marquee__container" autoFill={true}>
+    <Marquee className="overview-marquee__container" autoFill={true}>
       <div className="marquee__card">
         <div className="marquee__card--number">
           <p>{countdown.days}</p>
