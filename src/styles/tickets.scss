@@ -311,7 +311,7 @@
 .pretickets__section {
   position: relative;
   width: 100%;
-  height: calc(var(--grid-column-width) * 7);
+  height: calc(var(--grid-column-width) * 8);
   max-width: var(--max-width);
   margin: calc(1 * var(--grid-column-width)) auto 0;
   padding-inline: var(--grid-gutter-width);
@@ -395,7 +395,7 @@
     }
 
     &--title {
-      max-width: 80%;
+      max-width: 90%;
       height: calc(var(--grid-column-width) * 2);
 
       @media screen and (max-width: 940px) {
