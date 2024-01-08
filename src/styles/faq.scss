@@ -54,7 +54,11 @@
       gap: var(--space-12);
       padding: var(--space-16);
       cursor: pointer;
-      min-height: calc(var(--grid-column-width));
+      min-height: calc(var(--grid-column-width) - 1px);
+
+      @media screen and (max-width: 600px) {
+        min-height: calc(var(--grid-column-width) * 1.5 - 1px);
+      }
 
       &-tag {
         padding: 1px var(--space-8);

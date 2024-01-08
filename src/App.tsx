@@ -4,6 +4,7 @@ import { BackgroundGrid } from './components/BackgroundGrid/BackgroundGrid'
 import { Header } from './components/Header/Header'
 import { Index } from './pages/Index/Index';
 import { Wave } from './components/Wave/Wave';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Wave />
         <BackgroundGrid />
         <Index />
+        <Footer />
       </Router>
     </>
   )

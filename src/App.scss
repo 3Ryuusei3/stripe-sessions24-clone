@@ -2,6 +2,7 @@
 @import "./styles/background_grid.scss";
 @import "./styles/header.scss";
 @import "./styles/main.scss";
+@import "./styles/footer.scss";
 
 :root {
   /* General */
@@ -24,6 +25,16 @@
   --button-color: var(--color-black-primary);
   --button-border: 1px solid var(--button-color);
   --button-font: normal var(--font-size-subtitle-scalable) /1.02 var(--font-regular);
+
+  --footer-button-height: calc(2 * var(--grid-column-width));
+  --footer-button-background: hsla(0,0%,100%,.25);
+  --footer-button-color: var(--color-white-primary);
+  --footer-button-border: 2px solid var(--footer-button-color);
+  --footer-button-font: normal var(--font-size-title-scalable) /1.02 var(--font-regular);
+  @media screen and (max-width: 940px) {
+    --footer-button-height: calc(1 * var(--grid-column-width));
+    --footer-button-font: normal var(--font-size-subtitle-scalable) /1.02 var(--font-regular);
+  }
 
   /* Paddings */
   --space-base-unit: 4px;
@@ -86,6 +97,7 @@
   --font-size-marquee-desktopXL-scalable: calc(var(--font-size-marquee-base) / 1300 * var(--window-width));
   --font-size-marquee-desktopXXL-scalable: calc(var(--font-size-marquee-base) / var(--max-width-base) * var(--window-width));
   --font-size-marquee-scalable: var(--font-size-marquee-mobile-scalable);
+
   --letter-spacing-body: -0.01em;
 
   /* Animations */
