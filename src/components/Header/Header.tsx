@@ -7,9 +7,14 @@ export function Header() {
 
   const checkScroll = () => {
     const heroElement = document.getElementById('hero');
-    const rect = heroElement?.getBoundingClientRect();
-    if (rect) {
-      setShowFixedHeader(rect.bottom < 0);
+    const footerElement = document.getElementById('footer');
+    const rectHero = heroElement?.getBoundingClientRect();
+    const rectFooter = footerElement?.getBoundingClientRect();
+
+    if (rectHero && rectFooter) {
+      const footerTop = rectFooter.top + window.scrollY;
+      const isAboveFooter = window.scrollY < footerTop - 500;
+      setShowFixedHeader(rectHero.bottom < 0 && isAboveFooter);
     }
   };
 

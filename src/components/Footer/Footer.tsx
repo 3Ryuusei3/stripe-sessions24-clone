@@ -3,7 +3,7 @@ import ArrowIcon from "../Icons/ArrowIcon";
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="footer__container">
         <div className="footer__container--tags">
           <span>San Francisco</span>
