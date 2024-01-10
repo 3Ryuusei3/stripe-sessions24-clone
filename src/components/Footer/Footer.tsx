@@ -28,14 +28,14 @@ export function Footer() {
           </div>
           <div>
             <p>For Sessions support, email</p>
-            <Link to="#">registration@stripesessions.com</Link>
+            <Link className="link-under" to="#">registration@stripesessions.com</Link>
           </div>
           <div>
-            <Link to="#">View stripe.com</Link>
+            <Link className="link-under" to="#">View stripe.com</Link>
           </div>
           <div>
-            <Link to="#">Privacy and cookies</Link>
-            <Link to="#">Event terms</Link>
+            <Link className="link-under" to="#">Privacy and cookies</Link>
+            <Link className="link-under" to="#">Event terms</Link>
           </div>
         </div>
       </div>
