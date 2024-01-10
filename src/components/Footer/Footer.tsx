@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import ArrowIcon from "../Icons/ArrowIcon";
+import StripeSessionsIcon from "../Icons/StripeSessionsIcon";
 
 export function Footer() {
   return (
@@ -21,6 +22,22 @@ export function Footer() {
             <ArrowIcon fill='var(--color-white-primary)' />
           </div>
         </Link>
+        <div className="footer__container--nav">
+          <div>
+            <StripeSessionsIcon />
+          </div>
+          <div>
+            <p>For Sessions support, email</p>
+            <Link to="#">registration@stripesessions.com</Link>
+          </div>
+          <div>
+            <Link to="#">View stripe.com</Link>
+          </div>
+          <div>
+            <Link to="#">Privacy and cookies</Link>
+            <Link to="#">Event terms</Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
