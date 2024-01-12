@@ -19,39 +19,6 @@ main {
     z-index: 2;
   }
 
-  /* Font sizes */
-  --font-size-hero-base-mobile: 142;
-  --font-size-hero-base-tablet: 150;
-  --font-size-hero-base-desktop: 180;
-  --font-size-hero-base: 216;
-  --font-size-hero-mobile-scalable: calc(var(--font-size-hero-base-mobile) / 760 * var(--window-width));
-  --font-size-hero-tablet-scalable: calc(var(--font-size-hero-base-tablet) / 940 * var(--window-width));
-  --font-size-hero-desktop-scalable: calc(var(--font-size-hero-base-desktop) / 1120 * var(--window-width));
-  --font-size-hero-desktopXL-scalable: calc(var(--font-size-hero-base) / 1300 * var(--window-width));
-  --font-size-hero-desktopXXL-scalable: calc(var(--font-size-hero-base) / var(--max-width-base) * var(--window-width));
-
-  --font-size-hero-scalable: var(--font-size-hero-mobile-scalable);
-
-  @media only screen and (min-width: 760px) {
-    --font-size-hero-scalable:var(--font-size-hero-tablet-scalable)
-  }
-
-  @media only screen and (min-width: 940px) {
-    --font-size-hero-scalable:var(--font-size-hero-desktop-scalable)
-  }
-
-  @media only screen and (min-width: 1120px) {
-    --font-size-hero-scalable:var(--font-size-hero-desktopXL-scalable)
-  }
-
-  @media only screen and (min-width: 1300px) {
-    --font-size-hero-scalable:var(--font-size-hero-desktopXXL-scalable)
-  }
-
-  @media only screen and (min-width: 1480px) {
-    --font-size-hero-scalable:calc(var(--font-size-hero-base) * 1px)
-  }
-
   h1 {
     font-size: var(--font-size-hero-scalable);
     letter-spacing: -0.06em;

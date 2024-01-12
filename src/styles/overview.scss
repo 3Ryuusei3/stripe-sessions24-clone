@@ -7,7 +7,6 @@
   display: grid;
   grid-template-rows: repeat(4, var(--grid-column-width));
   column-gap: var(--grid-column-width);
-  width: 100%;
 
   @media screen and (max-width: 900px) {
     margin: calc(3 * var(--grid-column-width)) auto 0;

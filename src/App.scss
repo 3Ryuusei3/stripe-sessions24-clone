@@ -98,6 +98,17 @@
   --font-size-marquee-desktopXXL-scalable: calc(var(--font-size-marquee-base) / var(--max-width-base) * var(--window-width));
   --font-size-marquee-scalable: var(--font-size-marquee-mobile-scalable);
 
+  --font-size-hero-base-mobile: 142;
+  --font-size-hero-base-tablet: 150;
+  --font-size-hero-base-desktop: 180;
+  --font-size-hero-base: 216;
+  --font-size-hero-mobile-scalable: calc(var(--font-size-hero-base-mobile) / 760 * var(--window-width));
+  --font-size-hero-tablet-scalable: calc(var(--font-size-hero-base-tablet) / 940 * var(--window-width));
+  --font-size-hero-desktop-scalable: calc(var(--font-size-hero-base-desktop) / 1120 * var(--window-width));
+  --font-size-hero-desktopXL-scalable: calc(var(--font-size-hero-base) / 1300 * var(--window-width));
+  --font-size-hero-desktopXXL-scalable: calc(var(--font-size-hero-base) / var(--max-width-base) * var(--window-width));
+  --font-size-hero-scalable: var(--font-size-hero-mobile-scalable);
+
   --letter-spacing-body: -0.01em;
 
   /* Animations */
@@ -112,6 +123,7 @@
     --font-body: var(--font-weight-normal) 16px/1.2 var(--font-regular);
     --font-badge: var(--font-weight-normal) 16px/1.1 var(--font-regular);
     --font-caption: 12px/1 var(--font-mono-semibold);
+    --font-size-hero-scalable:var(--font-size-hero-tablet-scalable);
     --grid-column-count: 10;
   }
 
@@ -121,6 +133,7 @@
     --font-size-marquee-scalable: var(--font-size-marquee-desktop-scalable);
     --font-body: var(--font-weight-normal) 18px/1.2 var(--font-regular);
     --font-caption: 14px/1 var(--font-mono-semibold);
+    --font-size-hero-scalable:var(--font-size-hero-desktop-scalable);
     --grid-column-count: 12;
   }
 
@@ -128,6 +141,7 @@
     --font-size-title-scalable:var(--font-size-title-desktopXL-scalable);
     --font-size-subtitle-scalable: var(--font-size-subtitle-desktopXL-scalable);
     --font-size-marquee-scalable: var(--font-size-marquee-desktopXL-scalable);
+    --font-size-hero-scalable:var(--font-size-hero-desktopXL-scalable);
     --grid-column-count: 14;
   }
 
@@ -135,6 +149,7 @@
     --font-size-title-scalable:var(--font-size-title-desktopXXL-scalable);
     --font-size-subtitle-scalable: var( --font-size-subtitle-desktopXXL-scalable );
     --font-size-marquee-scalable: var(--font-size-marquee-desktopXXL-scalable);
+    --font-size-hero-scalable:var(--font-size-hero-desktopXXL-scalable);
     --grid-column-count: 16;
   }
 
@@ -142,6 +157,7 @@
     --font-size-title-scalable:calc(var(--font-size-title-base) * 1px);
     --font-size-subtitle-scalable: calc(var(--font-size-subtitle-base) * 1px);
     --font-size-marquee-scalable: calc(var(--font-size-marquee-base) * 1px);
+    --font-size-hero-scalable:calc(var(--font-size-hero-base) * 1px);
     --grid-column-count: 16;
     --grid-column-width: calc(var(--grid-column-width-base) * 1px);
   }

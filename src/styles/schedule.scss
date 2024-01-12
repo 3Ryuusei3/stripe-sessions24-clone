@@ -7,7 +7,6 @@
   display: grid;
   grid-template-rows: repeat(3, var(--grid-column-width));
   column-gap: var(--grid-column-width);
-  width: 100%;
 
   &--title {
     position: relative;
