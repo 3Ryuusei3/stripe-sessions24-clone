@@ -31,9 +31,10 @@
         display: none;
       }
 
-      a {
+      li {
         color: var(--color-black-primary);
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
 
         &:hover {
           color: rgba(var(--foreground-rgb),0.35)

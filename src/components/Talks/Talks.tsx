@@ -4,11 +4,11 @@ import { TalksTitle } from "../../atoms/Talks/TalksTitle";
 export function Talks() {
 
   return (
-    <div className="talks__container">
+    <section className="talks__container" id="talks-section">
       <TalksTitle />
       <div className="talks__cards">
         <TalksCard />
       </div>
-    </div>
+    </section>
   )
 }

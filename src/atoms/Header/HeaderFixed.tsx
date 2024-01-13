@@ -14,12 +14,12 @@ export function HeaderFixed({ shown }: HeaderFixedProps) {
           <StripeIcon fill='var(--color-black-primary)' />
         </div>
         <ul className="header__container--nav">
-          <li><Link to="#">Overview</Link></li>
-          <li><Link to="#">Talks</Link></li>
-          <li><Link to="#">Speakers</Link></li>
-          <li><Link to="#">Tickets</Link></li>
-          <li><Link to="#">Sponsors</Link></li>
-          <li><Link to="#">FAQ</Link></li>
+          <li onClick={() => document.getElementById('overview-section')?.scrollIntoView({ behavior: 'smooth' })}>Overview</li>
+          <li onClick={() => document.getElementById('talks-section')?.scrollIntoView({ behavior: 'smooth' })}>Talks</li>
+          <li onClick={() => document.getElementById('speakers-section')?.scrollIntoView({ behavior: 'smooth' })}>Speakers</li>
+          <li onClick={() => document.getElementById('tickets-section')?.scrollIntoView({ behavior: 'smooth' })}>Tickets</li>
+          <li onClick={() => document.getElementById('sponsors-section')?.scrollIntoView({ behavior: 'smooth' })}>Sponsors</li>
+          <li onClick={() => document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' })}>FAQ</li>
         </ul>
         <div className="header__container--register">
           <Link className="register__btn" to="#">

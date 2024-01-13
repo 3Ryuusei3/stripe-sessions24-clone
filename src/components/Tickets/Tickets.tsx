@@ -5,10 +5,10 @@ import { TicketsTitle } from "../../atoms/Tickets/TicketsTitle";
 export function Tickets() {
 
   return (
-    <>
+    <section id="tickets-sections">
       <TicketsTitle />
       <MainTicket />
       <PreTicket />
-    </>
+    </section>
   )
 }
