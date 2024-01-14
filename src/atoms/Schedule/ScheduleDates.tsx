@@ -10,7 +10,7 @@ export function ScheduleDates() {
   const [data, setData] = useState<Date[]>([]);
 
   useEffect(() => {
-    fetch('/scheduleData.json')
+    fetch('data/scheduleData.json')
       .then(response => response.json())
       .then(data => {
         setData(data);

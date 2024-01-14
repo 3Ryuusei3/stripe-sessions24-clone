@@ -7,8 +7,8 @@ export function MainTicket() {
     <div className="main-ticket__container">
       <div className="main-ticket__left">
         <picture className="main-ticket__left--img">
-          <source media="(min-width: 940px)" srcSet="/wave.png 2x" />
-          <img src="/wave-Y.png" alt="Wave" />
+          <source media="(min-width: 940px)" srcSet="/img/wave.png 2x" />
+          <img src="/img/wave-Y.png" alt="Wave" />
         </picture>
         <div className="main-ticket__left--tags">
           <p><span className="live"></span> Main Event</p>

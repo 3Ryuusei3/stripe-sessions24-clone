@@ -10,7 +10,7 @@ export function TalksCard() {
   const [data, setData] = useState<Talk[]>([]);
 
   useEffect(() => {
-    fetch('/talksData.json')
+    fetch('data/talksData.json')
       .then(response => response.json())
       .then(data => {
         setData(data);

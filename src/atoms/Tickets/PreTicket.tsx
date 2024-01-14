@@ -16,7 +16,7 @@ export function PreTicket() {
   const [data, setData] = useState<Ticket[]>([]);
 
   useEffect(() => {
-    fetch('/ticketsData.json')
+    fetch('data/ticketsData.json')
       .then(response => response.json())
       .then(data => {
         setData(data);

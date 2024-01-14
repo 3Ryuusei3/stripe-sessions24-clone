@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function SponsorsTitle() {
 
   return (
@@ -12,7 +14,7 @@ export function SponsorsTitle() {
           </div>
       </div>
       <div className="sponsors__container--description">
-        <p>Interested in becoming a sponsor?<br />Learn more</p>
+        <p>Interested in becoming a sponsor?<br /><Link to="#" className="link-under">Learn more</Link></p>
       </div>
       <div className="sponsors__container--description">
         <p>Connect with our sponsors on-site to learn how they can take your business to new heights.</p>

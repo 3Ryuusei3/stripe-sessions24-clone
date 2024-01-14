@@ -22,7 +22,7 @@ export function Wave() {
 
   return (
     <div className="wave__container">
-      <img src="/wave.svg" alt="Wave" style={{
+      <img src="/img/wave.svg" alt="Wave" style={{
         ['--img-blur' as string]: `${blur}px`,
         ['--img-opacity' as string]: `${opacity}` }} />
     </div>

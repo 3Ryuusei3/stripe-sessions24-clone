@@ -23,7 +23,7 @@ export function OverviewCarousel() {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    fetch('/overviewData.json')
+    fetch('data/overviewData.json')
       .then(response => response.json())
       .then(data => {
         setData(data);

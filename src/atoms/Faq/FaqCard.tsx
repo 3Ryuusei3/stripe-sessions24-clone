@@ -10,7 +10,7 @@ export function FaqCard() {
   const [data, setData] = useState<Faq[]>([]);
 
   useEffect(() => {
-    fetch('/faqData.json')
+    fetch('data/faqData.json')
       .then(response => response.json())
       .then(data => {
         setData(data);
