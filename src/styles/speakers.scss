@@ -66,3 +66,111 @@
     }
   }
 }
+
+.speakers__list {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: calc(2 * var(--grid-column-width)) auto 0;
+  padding-inline: var(--grid-gutter-width);
+  display: grid;
+
+
+  &--card {
+    height: calc(4 * var(--grid-column-width));
+    width: 100%;
+    padding: var(--space-16);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-8);
+    background-color: var(--color-white-primary);
+    outline: 1px solid var(--color-black-primary);
+    border-radius: var(--space-8);
+    overflow: hidden;
+
+    &-info {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      font: var(--font-badge);
+
+      p, a {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        padding: 2px var(--space-8);
+        border: 1px solid var(--color-black-primary);
+        border-radius: 32px;
+        text-transform: uppercase;
+        margin-block: auto;
+
+        span {
+          &.live {
+            width: var(--space-8);
+            height: var(--space-8);
+            background-color: var(--color-black-primary);
+            border-radius: 50%;
+          }
+        }
+      }
+
+      svg {
+        width: 10px;
+        height: auto
+      }
+    }
+
+    &-photo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      max-width: 150px;
+      @media screen and (max-width: 400px) {
+        max-width: 130px;
+      }
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+        border: 1px solid var(--color-black-primary);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        width: 100%;
+        max-width: 150px;
+        @media screen and (max-width: 400px) {
+          max-width: 130px;
+        }
+        height: 100%;
+        border-radius: 50%;
+        background: rgb(252,173,107, 0.1);
+        background: linear-gradient(306deg, rgba(252,173,107,0.1) 0%, rgba(179, 93, 177, 0.1) 100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
