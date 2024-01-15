@@ -427,7 +427,6 @@
           color: var(--color-white-primary);
         }
 
-        // Añade el pseudo-elemento para el fondo
         &::before {
           content: "";
           position: absolute;
@@ -442,7 +441,6 @@
           transition: transform 0.8s ease;
         }
 
-        // Cambia la transformación al pasar el ratón sobre el elemento
         &:hover::before {
           transform: scaleX(1);
         }
