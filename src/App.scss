@@ -61,6 +61,8 @@
 
   /* Font Family */
   --font-regular: "sohneregular", system-ui, sans-serif;
+  --font-bold: "sohnekrftig", system-ui, sans-serif;
+  --font-italics: "sohnekursiv", system-ui, sans-serif;
   --font-mono: "sohne_monoregular" ,ui-monospace, monospace;
   --font-mono-semibold: "sohne_monokrftig", ui-monospace, monospace;
 
@@ -232,6 +234,14 @@ h1, h2, h3, h4, h5, h6, p {
 h3 {
   font: var(--font-weight-normal) var(--font-size-subtitle-scalable) /1.04 var(--font-regular) !important;
   letter-spacing: -0.05em;
+}
+
+b {
+  font-family: var(--font-bold);
+}
+
+i {
+  font-family: var(--font-italics);
 }
 
 a,button {

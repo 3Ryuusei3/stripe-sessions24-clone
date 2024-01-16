@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 interface Date {
   day: string;
   month: string;
-  activities: string[];
+  activities: { title: string; time: string; }[];
 }
 
 export function ScheduleDates() {
@@ -30,7 +30,10 @@ export function ScheduleDates() {
           </div>
           <div className="dates__card--activities">
             {item.activities.map((activity, index) => (
-              <p key={index}>{activity}</p>
+              <div key={index}>
+                <p><b>{activity.title}</b></p>
+                <p><i>{activity.time}</i></p>
+              </div>
             ))}
           </div>
         </div>
