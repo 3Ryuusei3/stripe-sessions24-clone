@@ -8,7 +8,7 @@ export function ScheduleTitle() {
         </div>
         <div className="section-title">
           <div><h2>Agenda at a </h2></div>
-          <div><h2>glance</h2></div>
+          <div><h2><i>glance</i></h2></div>
           <div><h2></h2></div>
         </div>
       </div>

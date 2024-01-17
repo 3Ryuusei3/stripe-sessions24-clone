@@ -18,7 +18,7 @@ export function MainTicket() {
           <p>Early-bird pricing ends February 23</p>
         </div>
         <div className="main-ticket__left--title">
-          <h2>Sessions conference pass</h2>
+          <h2>Sessions conference <i>pass</i></h2>
         </div>
       </div>
       <div className="main-ticket__right">

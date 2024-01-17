@@ -8,7 +8,7 @@ export function SpeakersTitle() {
           </div>
           <div className="section-title">
             <div><h2>See the</h2></div>
-            <div><h2>lineup</h2></div>
+            <div><h2><i>lineup</i></h2></div>
           </div>
       </div>
       <div className="speakers__container--description">

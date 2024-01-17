@@ -8,7 +8,7 @@ export function FaqTitle() {
           </div>
           <div className="section-title">
             <div><h2>More</h2></div>
-            <div><h2>information</h2></div>
+            <div><h2><i>information</i></h2></div>
           </div>
       </div>
     </div>

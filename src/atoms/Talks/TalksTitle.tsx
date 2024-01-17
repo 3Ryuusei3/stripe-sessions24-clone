@@ -7,7 +7,7 @@ export function TalksTitle() {
         </div>
         <div className="section-title">
           <div><h2>Join the</h2></div>
-          <div><h2>conversation</h2></div>
+          <div><h2><i>conversation</i></h2></div>
         </div>
     </div>
   )

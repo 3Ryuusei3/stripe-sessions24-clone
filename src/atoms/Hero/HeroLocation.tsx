@@ -11,7 +11,7 @@ export function HeroLocation() {
         </div>
         <div className="section-title">
           <div><h2>San Francisco,</h2></div>
-          <div><h2>California</h2></div>
+          <div><h2><i>California</i></h2></div>
         </div>
       </div>
       <Link to="#" className="hero__location--register">
